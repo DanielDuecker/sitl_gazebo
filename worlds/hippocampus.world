@@ -18,10 +18,13 @@
         The pose is chosen that the hippocampus starts at position (0,0,0) with its own coordinate frame equal to the
         NED World frame.
     -->
+
+    <!--do not use model spwan in world file
+
     <include>
       <uri>model://hippocampus</uri>
       <pose>0 0 0 0 3.1415 -1.57075</pose>
-    </include>
+    </include>--> 
 
     <!-- Add physics -->
     <physics name='default_physics' default='0' type='ode'>

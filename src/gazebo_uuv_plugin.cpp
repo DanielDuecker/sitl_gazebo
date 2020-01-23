@@ -138,9 +138,9 @@ void GazeboUUVPlugin::OnUpdate(const common::UpdateInfo& _info) {
     forces[i] = rotor_force[0];
     //std::cout << "Applying force " << rotor_force[2] << " to rotor " << i << "\n";
 
-    // CCW 1, CW 2, CCW 3 and CW 4. Apply drag torque
+    // CW 1, CCW 2, CW 3 and CCW 4. Apply drag torque
     // directly to main body X axis
-    int propeller_direction = ((i+1)%2==0)?1:-1;            // ternary operator:  (condition) ? (if_true) : (if_false)
+    int propeller_direction = ((i+1)%2==0)?-1:1;            // ternary operator:  (condition) ? (if_true) : (if_false)
     ignition::math::Vector3d rotor_torque(
       propeller_direction * motor_torque_constant_ * command_[i] * std::abs(command_[i]), 0, 0);
     link_->AddRelativeTorque(rotor_torque);

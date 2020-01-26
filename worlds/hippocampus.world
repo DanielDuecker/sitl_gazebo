@@ -19,12 +19,12 @@
         NED World frame.
     -->
 
-    <!--do not use model spwan in world file
+    <!--do not use model spwan in world file -->
 
     <include>
       <uri>model://hippocampus</uri>
       <pose>0 0 0 0 3.1415 -1.57075</pose>
-    </include>--> 
+    </include>
 
     <!-- Add physics -->
     <physics name='default_physics' default='0' type='ode'>
